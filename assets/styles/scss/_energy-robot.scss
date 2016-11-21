@@ -1,0 +1,121 @@
+$fly-in-time: 3s;
+$hover-bezier: cubic-bezier(0.57, 0.19, 0.25, 0.75);
+$spacing-unit: 28px;
+
+.energy-robot{
+        &.fill-1{
+         svg#energy-robot-bulb path{
+            fill: rgba(255, 165, 0, 0.51);
+          }
+          svg#energy-robot-filament path{
+            fill: rgba(255, 234, 5, 0.76);
+          }
+        }
+        &.fill-2{
+         svg#energy-robot-bulb{
+          path{
+              fill: rgb(255, 222, 12);
+            }
+          }
+        }
+        &.fill-3{
+         svg#energy-robot-bulb{
+          -webkit-animation: dropShadowPulse 2.25s infinite ease-in-out;
+          -moz-animation: dropShadowPulse 2.25s infinite ease-in-out;
+          -ms-animation: dropShadowPulse 2.25s infinite ease-in-out;
+          animation: dropShadowPulse 2.25s infinite ease-in-out;
+
+          path{
+              fill: rgb(245, 255, 114);
+            }
+          }
+          svg#energy-robot-filament path{
+            fill: #ffffcd;
+          }
+        }
+        &.fill-4{
+         svg#energy-robot-bulb{
+          -webkit-animation: dropShadowPulseWhite 2.25s infinite ease-in-out;
+          -moz-animation: dropShadowPulseWhite 2.25s infinite ease-in-out;
+          -ms-animation: dropShadowPulseWhite 2.25s infinite ease-in-out;
+          animation: dropShadowPulseWhite 2.25s infinite ease-in-out;
+
+          path{
+              fill: #fbffa0;
+            }
+          }
+          svg#energy-robot-filament path{
+            fill: #ffffcd;
+          }
+        }
+        &.fill-5{
+         svg#energy-robot-bulb{
+          -webkit-animation: dropShadowPulseWhite 2.25s infinite ease-in-out;
+          -moz-animation: dropShadowPulseWhite 2.25s infinite ease-in-out;
+          -ms-animation: dropShadowPulseWhite 2.25s infinite ease-in-out;
+          animation: dropShadowPulseWhite 2.25s infinite ease-in-out;
+
+          path{
+              fill: #FFFFFF;
+            }
+          }
+          svg#energy-robot-filament path{
+            fill: yellow;
+          }
+        }
+
+        svg{
+          position: absolute;
+          left: 0;
+          right: 0;
+
+          &#energy-robot-bulb{
+            top: -10.5em;
+            left: -0.5em;
+            z-index: 1;
+
+            path{
+              fill: #E3E3E3;
+              transition: fill .25s ease-in-out;
+              stroke-location: outside;
+            }
+          }
+          &#energy-robot-filament{
+            top: -6.5em;
+            z-index: 2;
+            left: 1.5em;
+            path{
+              fill: rgba(255,255,255,0.5);
+            }
+          }
+          &#energy-robot-left-eye{
+            top: -12.5em;
+            z-index: 2;
+          }
+          &#energy-robot-right-eye{
+            top: -13.5em;
+            left: 5.5em;
+            z-index: 2;
+          }
+        }
+}
+
+
+
+@keyframes dropShadowPulse {
+  0% { filter: drop-shadow( 0px 0px 50px rgba(255, 255, 0, 1));  }
+  50%  {  filter: drop-shadow( 0px 0px 0px rgba(255, 255, 0, 1)); }
+  100%  {  filter: drop-shadow( 0px 0px 50px rgba(255, 255, 0, 1));  }
+}
+
+@keyframes dropShadowPulseWhite {
+  0% {  filter: drop-shadow( 0px 0px 0px #FFF );  }
+  50%   {  filter: drop-shadow( 0px 0px 30px #FFF ); }
+  100% {  filter: drop-shadow( 0px 0px 0px #FFF );  }
+}
+
+@keyframes strokePulse {
+  0% { stroke-width: 0.25em; stroke: orange; }
+  50%   { stroke-width: 0; stroke: orange; }
+  100% { stroke-width: 0.25em; stroke: orange; }
+}

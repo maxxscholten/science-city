@@ -1,0 +1,95 @@
+.air-robot{
+/* SVG Styles */
+svg#robot {
+  padding: 1.5em;
+  position: absolute;
+  bottom: -2em;
+  z-index: 5;
+}
+
+.arm,
+.leg {
+  animation: dangle 6s $hover-bezier infinite;
+  position: absolute;
+}
+
+.body{
+  z-index: 1;
+  position: absolute;
+}
+
+.flame {
+  animation: flicker 0.35s linear infinite;
+  position: absolute;
+  z-index: 2;
+}
+
+.levitate {
+  animation: levitate 3s $hover-bezier infinite;
+}
+
+.smoke {
+  animation: smoke 0.35s linear infinite;
+}
+
+.smoke-background {
+  animation: track-levitate 5s $hover-bezier infinite;
+  animation-delay: 0.25s;
+}
+
+// Animation delay classes
+@for $i from 2 through 10 {
+  .delay-#{$i} {animation-delay: 0.03s * $i;}
+}
+
+// Keyframe animations
+/*
+  Flicker courtesy of:
+  http://codepen.io/ghen/pen/pvwOwM
+*/
+@keyframes flicker {
+  0% {transform: translateX(5.75em) translateY(16em)  rotate(-1deg) ;}
+  25% {transform: translateX(5.75em) translateY(16em)  rotate(1deg) scaleY(1.15) ;}
+  50%, 100% {transform: translateX(5.75em) translateY(16em) rotate(1deg) ;}
+  75% {transform: translateX(5.75em) translateY(16em) rotate(-2deg) scaleY(0.95) ;}
+
+}
+
+@keyframes smoke {
+  0% {transform:  translateX(0) translateY(25em) scale(0.95);}
+  50% {transform:  translateX(0) translateY(25em) scale(1);}
+  100% {transform:  translateX(0) translateY(25em) scale(0.95);}
+}
+
+/*
+  Rotating hover courtesy of:
+  http://lea.verou.me/2012/02/moving-an-element-along-a-circle/
+*/
+@keyframes levitate {
+  from {transform: rotate(0deg) translate(-5px) rotate(0deg);}
+  to {transform: rotate(360deg) translate(-5px) rotate(-360deg);}
+}
+
+@keyframes track-levitate {
+  0%, 100% {transform: translateX(-0.5em) translateY(25em) scale(0.85); }
+  50% {transform: translateX(0) translateY(25em) scale(1);}
+}
+
+@keyframes dangle {
+  0%, 100% {transform:  translateY(6em) rotate(0deg);}
+  33% {transform: translateY(6em) rotate(2deg);}
+  66% {transform: translateY(6em) rotate(-2deg);}
+}
+
+@keyframes attach-head {
+  0%, 100% {transform: translate(0px 0px);}
+  20% {transform: translate(-130px, 60px);}
+  80% {transform: translate(-130px, 60px);}
+}
+
+@keyframes fly-in {
+  0% {transform: translateX(2000px);}
+  100% {transform: translateX(0px);}
+}
+
+}

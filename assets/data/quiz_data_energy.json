@@ -1,0 +1,69 @@
+[
+    {
+        "question" : "How many Xboxes could Union Station power at once?",
+        "class": "energy",
+        "answers"  : [
+            {"id"  : 0, "text" : "30 Xboxes"},
+            {"id"  : 1, "text" : "3,000 Xboxes"},
+            {"id"  : 2, "text" : "30,000 Xboxes"}
+        ],
+        "questionTip": "An Xbox uses 0.1 kilowatt of energy. Union Station uses up to 32,877 kWh per day.",
+        "feedbackAns": "Wow! That's a lot of Halo!",
+        "feedbackCopy": "",
+        "correct"  : 2,
+        "showButton": true
+    },
+    {
+        "question" : "How much energy does the average American household use per year?",
+        "class": "energy",
+        "answers"  : [
+            {"id"  : 0, "text" : "11,280 kWh"},
+            {"id"  : 1, "text" : "5,100 kWh"},
+            {"id"  : 2, "text" : "13,670 kWh"}
+        ],
+        "questionTip": "kWh means kilowatthour - a unit for measuring energy.",
+        "feedbackAns": "11,280 kWh per year ",
+        "feedbackCopy": "The average residential rate is 11.88 cents/kWh. A typical U.S. household consumes about 11,280 kWh per year, costing an average of $1,340 annually.",
+        "correct"  : 0
+    },
+    {
+        "question" : "How much energy has Union Station saved this year?",
+        "class": "energy",
+        "answers"  : [
+            {"id"  : 0, "text" : "10,000 kWh"},
+            {"id"  : 1, "text" : "3.7 million kWh"},
+            {"id"  : 2, "text" : "1 trillion kWh"}
+        ],
+        "questionTip": "kWh means kilowatthour - a unit for measuring energy.",
+        "feedbackAns": "They have saved 3.7 million Kwh this year!",
+        "feedbackCopy": "By saving 3.7 million kWh, Union Station prevented 2,600 metric tons of greenhouses gases going into our atmosphere. This is equivalent to the amount of carbon dioxide a small national forest would remove from the air on an annual basis.",
+        "correct"  : 1
+    },
+    {
+        "question" : "To save on your energy bill which lightbulbs should you buy?",
+        "class": "energy",
+        "answers"  : [
+            {"id"  : 0, "text" : "Incandescent"},
+            {"id"  : 1, "text" : "LED"},
+            {"id"  : 2, "text" : "Compact Fluorescent"}
+        ],
+        "questionTip": "LED stands for light-emitting diode",
+        "feedbackAns": "LED lighting is the most energy efficient!",
+        "feedbackCopy": "Halogen incandescent and CFL are also energy efficient but sometimes more expensive than LED.",
+        "feedbackImg": "assets/images/questions/energy-usage-1.svg",
+        "correct"  : 1
+    },
+    {
+        "question" : "What should you look for in a lightbulb?",
+        "class": "energy",
+        "answers"  : [
+            {"id"  : 0, "text" : "Cost"},
+            {"id"  : 1, "text" : "Watts"},
+            {"id"  : 2, "text" : "Lumen"}
+        ],
+        "questionTip": "Lumens correlatates with the brightness of the bulb",
+        "feedbackAns": "How illuminating!",
+        "feedbackCopy": "One of the fastest ways to cut energy bills is through lighting. You want high lumens, low watts. For example, if you’re replacing an inefficient 100 W bulb that emits 1600 lumens, look for an energy-saving bulb that uses less watts but the same lumens.",
+        "correct"  : 2
+    }
+]

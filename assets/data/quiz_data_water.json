@@ -1,0 +1,69 @@
+[
+    {
+        "question" : "How many tons of water does Union Station cool each day?",
+        "class": "water",
+        "answers"  : [
+            {"id"  : 0, "text" : "400 tons"},
+            {"id"  : 1, "text" : "400,000 tons"},
+            {"id"  : 2, "text" : "4,000 tons"}
+        ],
+        "questionTip": "A metric ton of<br>water is equal to<br>264 gallons.",
+        "feedbackAns": "Union Station cools 4,000 tons of water per day.",
+        "feedbackCopy": "Water moves through facilities as fast as 1350 gallons / minute so you can wash your hands, drink from a fountain, but also flows to keep the space cool and make you more comfortable.",
+        "correct"  : 2
+    },
+    {
+        "question" : "How many gallons of water does the average American household use per day?",
+        "class": "water",
+        "answers"  : [
+            {"id"  : 0, "text" : "31 gallons"},
+            {"id"  : 1, "text" : "64 gallons"},
+            {"id"  : 2, "text" : "117 gallons"}
+        ],
+        "questionTip": "Water is used for showers, cooking<br>and cleaning!",
+        "feedbackAns": "64 Gallons a day! ",
+        "feedbackCopy": "That means 23,360 gallons a year! Here is how an average household uses their water per day:",
+        "feedbackImg": "assets/images/questions/water-usage-1.svg",
+        "correct"  : 1
+    },
+    {
+        "question" : "What is the second largest utility expense for the average American household?",
+        "class": "water",
+        "answers"  : [
+            {"id"  : 0, "text" : "Heating Water"},
+            {"id"  : 1, "text" : "Lighting"},
+            {"id"  : 2, "text" : "Air Conditioning"}
+        ],
+        "questionTip": "It accounts for 14-18% of your utility bills",
+        "feedbackAns": "Heating Water accounts for 14-18% of your utility bills!",
+        "feedbackCopy": "The average houshold spends $400-$600 on heating water each year. Here are some handy tips for reducing your water heating bills!",
+        "feedbackImg": "assets/images/questions/water-usage-2.svg",
+        "correct"  : 0
+    },
+    {
+        "question" : "How much of the world’s water is potable?",
+        "class": "water",
+        "answers"  : [
+            {"id"  : 0, "text" : "1%"},
+            {"id"  : 1, "text" : "5%"},
+            {"id"  : 2, "text" : "30%"}
+        ],
+        "questionTip": "Potable water means it is safe for humans to drink!",
+        "feedbackAns": "Only 1% of all the water on  earth is potable.",
+        "feedbackCopy": "97% of the water on earth is salt water which can’t be used by humans.",
+        "correct"  : 0
+    },
+    {
+        "question" : "How much energy has Union Station saved from their chilled water plant this year?",
+        "class": "water",
+        "answers"  : [
+            {"id"  : 0, "text" : "50,000 kWh"},
+            {"id"  : 1, "text" : "200,000 kWh"},
+            {"id"  : 2, "text" : "700,000 kWh"}
+        ],
+        "questionTip": "It takes a lot of energy to cool water!",
+        "feedbackAns": "Union Station is saving 700,000 kWh this year from their chilled water plant alone!",
+        "feedbackCopy": "That means overall, their chilled water plant is running more efficiently and makes up 18% of the total energy savings!",
+        "correct"  : 2
+    }
+]

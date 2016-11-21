@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html ng-app="bcsScienceCity">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=1920, height=1080, initial-scale=1.0, minimum-scale=1">
+    <title>BCS Science City</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles/css/main.css">
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="bcsScienceCity" ng-controller="QuizController">
+
+        <!-- PROGRESS BAR -->
+        <div class="progress" ng-class="{
+                'game-over': isGameOver(),
+                'restarted': isGameRestarted()
+            }">
+            <div ng-show="(activeQuestion > -1)" class="
+            {{ myQuestion.class }}
+            {{ ($index === activeQuestion) ? 'on' : 'off' }}
+            {{ (myQuestion.questionState === 'answered') ? 'answered' : 'unanswered' }}
+            {{ (myQuestion.correctness === 'correct') ? 'correct' : 'incorrect' }}
+            " ng-repeat="myQuestion in myQuestions">
+            </div>
+            <!-- RESULTS -->
+            <div class="results">
+                <h3>Results</h3>
+                <h2>You scored {{ percentage }}% by answering {{ score }} of the total {{ totalQuestions }} questions.</h2>
+                <p class="btn pulse-btn restart-game" ng-click="restartGame()">Play another quiz</p>
+            </div>
+        </div>
+
+        <!-- INTRO -->
+        <div ng-if="activeQuestion < 0" class="intro {{ activeQuestion > -1 ? 'inactive' : 'active' }}"
+            ng-class="{
+                'game-over': isGameOver(),
+            }"
+            >
+            <h1>How does Union Station use energy, water and air to keep the building running?</h1>
+            <div class="characters-container">
+                <div class="character-wrapper">
+                    <div class="character energy">
+                        <div ng-include src="'views/energy-robot.html'"></div>
+                    </div>
+                    <p class="btn start-game" ng-click="startGame('energy')">Play</p>
+                </div>
+                <div class="character-wrapper">
+                    <div class="character water">
+                        <div ng-include src="'views/water.html'"></div>
+                        <div ng-include src="'views/water-robot.html'"></div>
+                    </div>
+                    <p class="btn start-game" ng-click="startGame('water')">Play</p>
+                </div>
+                <div class="character-wrapper">
+                    <div class="character air">
+                        <div ng-include src="'views/air-robot.html'"></div>
+                    </div>
+                    <p class="btn start-game" ng-click="startGame('air')">Play</p>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- QUESTION -->
+        <div class="question
+        {{ myQuestion.questionState === 'answered' ? 'answered' : 'unanswered'  }}
+        {{ $index === activeQuestion ? 'active' : 'inactive' }}
+        " ng-repeat="myQuestion in myQuestions">
+            <div class="txt-container {{ myQuestion.class }}">
+                <div class="txt">
+                    <h1>{{ myQuestion.question }}</h1>
+                    <p>{{ myQuestion.questionSubcopy }}</p>
+                </div>
+                <div class="ans-container">
+                    <div class="ans-wrapper">
+                        <p class="ans" ng-class="{
+                                        image: Answer.image,
+                                        'selected': isSelected($parent.$index, $index),
+                                        'correct': isCorrect($parent.$index, $index),
+                                        'pulse-btn': isCorrect($parent.$index, $index)
+                                    }" ng-style="{ 'background-image': 'url({{Answer.image}})' }" ng-click="selectAnswer($parent.$index, $index)" ng-repeat="Answer in myQuestions[$index].answers">
+                            {{Answer.text}}
+                        </p>
+                    </div>
+                    <div class="feedback">
+                        <h3>{{myQuestion.feedbackAns}}</h3>
+                        <p ng-bind-html="trust(myQuestion.feedbackCopy)"></p>
+                        <div class="feedback-img" ng-if="myQuestion.feedbackImg">
+                            <img src="{{myQuestion.feedbackImg}}">
+                        </div>
+                        <div class="next-question btn pulse-btn {{ (myQuestion.questionState === 'answered') ? 'fadeIn': 'fadeOut' }}" ng-click="selectContinue()">{{ (totalQuestions-1) === $index ? 'See Results' : 'Next Question' }}</div>
+                    </div>
+                </div>
+            </div>
+            <div ng-include src="'views/quote.html'" class="{{ myQuestion.class }}"></div>
+        </div>
+
+
+        <!-- ROBOT BACKGROUND -->
+        <div class="
+        robot-background
+        {{ myQuestions[activeQuestion].class }}
+        {{ isGameOver() ? myQuestions[totalQuestions-1].class : ''}}">
+            <div ng-include src="'views/water.html'" ng-if="myQuestions[activeQuestion].class == 'water'"></div>
+            <div ng-include src="'views/water-robot.html'" ng-if="myQuestions[activeQuestion].class == 'water'"></div>
+            <div ng-include src="'views/energy-robot.html'" ng-if="myQuestions[activeQuestion].class == 'energy'"></div>
+            <div ng-include src="'views/air-robot.html'" ng-if="myQuestions[activeQuestion].class == 'air'"></div>
+        </div>
+
+
+    </div>
+    <script type="text/javascript" src="assets/js/library/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/library/angular.min.js"></script>
+    <script type="text/javascript" src="assets/js/quiz.js"></script>
+</body>
+
+</html>

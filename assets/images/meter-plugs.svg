@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="380px" height="124px" viewBox="0 0 380 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-855.000000, -850.000000)">
+            <g id="Group" transform="translate(856.000000, 851.000000)">
+                <circle id="Oval" stroke="#979797" fill="#474747" cx="9.5" cy="9.5" r="9.5"></circle>
+                <circle id="Oval-Copy" stroke="#979797" fill="#474747" cx="45.5" cy="9.5" r="9.5"></circle>
+                <circle id="Oval-Copy" stroke="#979797" fill="#D8D8D8" cx="45.5" cy="9.5" r="5.5"></circle>
+                <circle id="Oval-Copy" stroke="#979797" fill="#D8D8D8" cx="9.5" cy="9.5" r="5.5"></circle>
+                <path d="M46,9 C46,9 126.852124,117.543744 202.360352,119.773437 C277.868579,122.003131 358.720703,18.234375 358.720703,18.234375" id="Line" stroke="#AAAAAA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8,9 C8,9 122.307978,105.431029 209.027344,107.511719 C295.74671,109.592409 368,45.2929687 375.777344,17.8242188" id="Line-Copy" stroke="#AAAAAA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,353 @@
+// ELECTRIC METER
+canvas#canvas{
+  display: none;
+    .energy &{
+    display: block;
+  }
+}
+.meter {
+  background-color: #679d9e;
+  height: 250px;
+  width: 330px;
+  margin: 0;
+  position: absolute;
+  right: 63.4em;
+  bottom: 9.75em;
+  display: none;
+  box-shadow: 0.5em 0.5em 0px rgba(255, 255, 255, 0.5);
+
+  .energy &{
+    display: block;
+  }
+
+  .robot &{
+      transform: scale(.18);
+      top:-4.25em;
+      left: -6.6em;
+      box-shadow: none;
+      border-radius: 25px;
+  }
+
+  .meter-plugs{
+    background: url(../../images/meter-plugs.svg) 0 0 no-repeat;
+    background-size: contain;
+    position: absolute;
+    height: 10em;
+    width: 23em;
+    position: absolute;
+    top: 91%;
+    left: 81%;
+    z-index: 5;
+  }
+}
+
+// Corner LED Indicators
+.meter:before,
+.meter:after {
+  background: #303030;
+  border-radius: 2px;
+  content: '';
+  height: 10px;
+  position: absolute;
+  top: 25px;
+  width: 25px;
+  .robot &{
+    display: none;
+  }
+}
+
+.meter:before { left: 40px; }
+.meter:after { right: 40px; }
+
+.meter-glass {
+  border-radius: 50% 50% 12px 12px;
+  height: 150px;
+  margin: -55px 0 0 -125px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  transition: all .8s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+
+  .robot &{
+    top: 43%;
+  }
+}
+
+// Needle Dial & Circular LED Indicator
+.meter-glass:before,
+.meter-glass:after {
+  border-radius: 50%;
+  content: '';
+  position: absolute;
+}
+
+// Needle Dial
+.meter-glass:before {
+  background: #303030;
+  box-shadow: inset 0 2px 0 rgba(white, .2), 0 2px 2px rgba(black, .2);
+  height: 1.5em;
+  margin: 0 0 0 -.75em;
+  left: 50%; bottom: 10px;
+  width: 1.5em;
+}
+
+// Circular LED Indicator
+.meter-glass:after {
+  background: #333;
+  border: 1px solid #666;
+  box-shadow: inset 0 2px 1px rgba(white, .2);
+  height: .8em;
+  margin: 0 0 0 -.4em;
+  bottom: 62px; left: 50%;
+  width: .8em;
+}
+
+.meter-display {
+  height: 110px;
+  margin: -55px 0 0 -110px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 220px;
+  z-index: 2;
+}
+
+.meter-range {
+  transform-origin: 110px 110px;
+  transform: rotate(0deg);
+  transition: all .8s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  // Animating range example
+/*  -webkit-animation: jesse .8s cubic-bezier(0.680, -0.550, 0.265, 1.550) infinite alternate;*/
+}
+
+.meter-range-item {
+  border: 10px solid transparent;
+  border-radius: 50%;
+  height: 220px;
+  position: absolute;
+  top: 0;
+  width: 220px;
+  transform: rotate(-35deg);
+}
+
+.meter-range-item--1 {
+  border-color: #A51818;
+}
+
+.meter-range-item--2 {
+  border-top-color: #fff;
+  border-right-color: #fff;
+  transform: rotate(44deg);
+}
+
+.meter-range-item--3 {
+  border-top-color: #B4A299;
+  border-right-color: #B4A299;
+  transform: rotate(48deg);
+}
+
+.meter-needle {
+  background-color: #A51818;
+  box-shadow: 0 0 2px rgba(black, .2);
+  height: 75px;
+  margin: 0 -1px 0 0;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 3px;
+  transition: all .8s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  transform: rotate(0deg);
+  transform-origin: 0 100%;
+  // Needle animation example
+/*  -webkit-animation: jesse .8s cubic-bezier(0.680, -0.550, 0.265, 1.550) infinite alternate;*/
+}
+
+// Radial Line Decorations
+.meter-needle:before,
+.meter-needle:after {
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%; top: 100%;
+}
+
+.meter-needle:before {
+  border: 1px solid rgba(#111, .1);
+  height: 60px;
+  margin: -31px 0 0 -33px;
+  width: 60px;
+}
+
+.meter-needle:after {
+  border: 1px solid rgba(#111, .1);
+  height: 142px;
+  margin: -72px 0 0 -74px;
+  width: 142px;
+}
+
+// Main Meter Label
+.meter-label {
+  color: #ececec;
+  display: block;
+  font-family: "Lucida Console","Lucida Sans Typewriter",monaco,"Bitstream Vera Sans Mono";
+  font-size: 20px;
+  padding-top: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(black, .2);
+}
+
+// LED Indicator labels
+.meter-label:before,
+.meter-label:after {
+  content: '-';
+  color: #333;
+  font-size: 1em;
+  font-weight: normal;
+  position: absolute;
+  top: 2em;
+}
+
+.meter-label:before { left: 14%; }
+.meter-label:after { content: '+'; right: 14%; }
+
+@-webkit-keyframes jesse {
+  0% {
+    transform: rotate(-20deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  75% {
+    transform: rotate(55deg);
+  }
+  100% {
+    transform: rotate(78deg)
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    background: #333 none;
+  }
+  50% {
+    background: radial-gradient(ellipse at center, #bf3030 23%, #8c2323 100%);
+  }
+  100% {
+    background: radial-gradient(ellipse at center, #bf3030 23%, #8c2323 100%);
+  }
+}
+
+@-webkit-keyframes blink-2 {
+  0% {
+    background: #303030 none;
+    box-shadow: none;
+  }
+  50% {
+    background: #bf3030;
+  }
+  100% {
+    background: #bf3030;
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+    transform: translate(12px, 1px);
+  }
+  50% {
+    transform: translate(-12px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes shake-medium {
+  0% {
+    transform: translate(4px, 0);
+  }
+  50% {
+    transform: translate(-4px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes shake-subtle {
+  0% {
+    transform: translate(2px, 0);
+  }
+  50% {
+    transform: translate(-2px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.fill-lump-0 {
+  .meter-glass { background: radial-gradient(ellipse at center, #e5e5e5 0%,#e5e5e5 27%, #f2f2f2 100%); }
+  .meter-range { transform: rotate(-90deg); }
+}
+
+
+.fill-lump-1 {
+  .meter-glass { background: radial-gradient(ellipse at center, #e5dda1 0%,#e5dda1 27%,#e5c195 100%); }
+  .meter-range { transform: rotate(-45deg); }
+}
+
+
+.fill-lump-2 {
+  &.meter:after { -webkit-animation: blink .8s step-end 0s infinite normal both; }
+  .meter-glass { background: radial-gradient(ellipse at center, #ffe738 0%,#ffe738 27%,#fe981f 100%); }
+  .meter-glass:after { -webkit-animation: blink .8s .4s step-end infinite normal both; }
+  .meter-range { transform: rotate(0deg); }
+}
+
+.fill-lump-3 {
+  &.meter:after { -webkit-animation: blink .5s step-end 0s infinite normal both; }
+  .meter-glass { background: radial-gradient(ellipse at center, #ffe626 0%,#ffe626 27%,#fc720d 100%); }
+  .meter-glass:after { -webkit-animation: blink .5s .25s step-end infinite normal both; }
+  .meter-range { transform: rotate(45deg); }
+}
+
+.fill-lump-4 {
+  &.meter:after { -webkit-animation: blink .3s step-end 0s infinite normal both; }
+  .meter-glass { background: radial-gradient(ellipse at center, #ffce26 0%,#ffce26 27%,#fc670d  100%); }
+  .meter-glass:after { -webkit-animation: blink .3s .15s step-end infinite normal both; }
+  .meter-range { transform: rotate(60deg); }
+}
+
+.fill-lump-5 {
+  &.meter:after { -webkit-animation: blink .3s step-end 0s infinite normal both; }
+  .meter-glass { background: radial-gradient(ellipse at center, #ffce26 0%,#ffce26 27%,#fc670d  100%); }
+  .meter-glass:after { -webkit-animation: blink .3s .15s step-end infinite normal both; }
+  .meter-range { transform: rotate(90deg); }
+}
+
+
+.fill-0 {
+  .meter-needle { transform: rotate(-90deg); }
+}
+.fill-1 {
+  .meter-needle { transform: rotate(-45deg); }
+}
+.fill-2 {
+  .meter-needle { transform: rotate(0deg); }
+}
+.fill-3 {
+  .meter-needle { transform: rotate(45deg); }
+}
+.fill-4 {
+  .meter-needle { transform: rotate(60deg); }
+}
+.fill-5 {
+  .meter-needle { transform: rotate(90deg); }
+}

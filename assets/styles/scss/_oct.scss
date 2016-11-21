@@ -1,0 +1,139 @@
+.water{
+
+.oct{
+    font-size: 2em;
+    position: absolute;
+    right: 22em;
+    bottom: 4em;
+    z-index: 5;
+    animation: shakeOct 15s ease-in-out alternate infinite;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+@keyframes shakeOct {
+  10%, 90% {
+    transform: translateY(-2px);
+  }
+
+  20%, 80% {
+    transform: translateY(4px);
+  }
+
+  30%, 50%, 70% {
+    transform: translateY(-8px);
+  }
+
+  40%, 60% {
+    transform: translateY(8px);
+  }
+}
+
+$color: #ED247B;
+.head {
+  position: absolute;
+  top: -5.5em;
+  left: -3em;
+  height: 6em;
+  width: 6em;
+  background: url(../../images/robot-water-head.svg) 50% 50% no-repeat;
+  background-size: contain;
+}
+.tentacle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -2em;
+  &:before{
+    display: block;
+    content: '';
+    width: .35em;
+    height: .35em;
+    border-radius: .25em;
+    background: #750938;
+    position: absolute;
+    top: 2.05em;
+    left: .35em;
+    z-index: 6;
+  }
+  &._3 {
+    z-index: 3;
+    transform: translateX(-1.5em) translateY(1em) rotate(-110deg);
+    div {
+      animation-delay: -2.5s;
+    }
+ }
+  &._4 {
+    z-index: 4;
+    transform: translateX(1.75em) translateY(2.5em) rotate(-170deg);
+    div {
+      animation-delay: -0.5s;
+    }
+ }
+  &._6 {
+    z-index: 2;
+    transform: translateX(4em) translateY(2em) rotateY(180deg) rotate(-130deg);
+    div {
+      animation-delay: -2.5s;
+    }
+  }
+  &._7 {
+   z-index: 3;
+   transform: translateX(5.5em) rotateY(180deg) translateY(1em) rotate(-110deg);
+    div {
+      animation-delay: -1s;
+    }
+  }
+
+  div {
+    font-size: 0.9em;
+    height: 3em;
+    width: 1em;
+    border-radius: 100% 100%;
+    background: #ED247B;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    animation: rot 5s ease-in-out alternate infinite;
+
+    &:before{
+      display: block;
+      width: 1em;
+      height: .25em;
+      background: #a2074a;
+      border-radius: 2em;
+      content: '';
+      position: absolute;
+      bottom: 50%;
+      z-index: 5;
+    }
+
+    div {
+      top: auto;
+      bottom: 1em;
+      left: auto;
+      right: 0;
+      transform: rotate(5deg);
+      transform-origin: 100% 100%;
+      $sel: '';
+      @for $i from 0 to 20 {
+        $sel: unquote($sel + ' div');
+        #{$sel} {
+          //animation-delay: $i* -0.2s!important;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+}

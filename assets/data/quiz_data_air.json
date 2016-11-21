@@ -1,0 +1,74 @@
+[
+    {
+        "question" : "How many hot air balloons could Union Station fill up in a day?",
+        "questionSubcopy": "Union Station has 540 fans each blowing 1000 cubic meters of air per day. ",
+        "class": "air",
+        "answers"  : [
+            {"id"  : 0, "text" : "54"},
+            {"id"  : 1, "text" : "540"},
+            {"id"  : 2, "text" : "5,400"}
+        ],
+        "questionTip": "A hot air balloon uses 100 cubic meters of air.",
+        "feedbackAns": "Union Station could fill 5,400 hot air balloons in a day.",
+        "feedbackCopy": "Press the green button to activate the air compressors that deliver you A.C.",
+        "ansTip": "That's a lot of air! I wonder if the fans blow faster than my jets...",
+        "correct"  : 2
+    },
+    {
+        "question" : "Which principle of heat transfer applies to keep you comfortable inside Union Station?",
+        "class": "air",
+        "answers"  : [
+            {"id"  : 0, "text" : "Conduction"},
+            {"id"  : 1, "text" : "Convection"},
+            {"id"  : 2, "text" : "Radiation"}
+        ],
+        "questionTip": "Understanding the science is important when looking at cooling strategies for your home!",
+        "feedbackAns": "Convection",
+        "feedbackCopy": "Convection means as hot or cool air circulates past your skin it will warm or cool you!",
+        "ansTip": "How cool?!",
+        "correct"  : 1
+    },
+    {
+        "question" : "What is one of the most common places for air leaks in your home?",
+        "class": "air",
+        "answers"  : [
+            {"id"  : 0, "text" : "Toilet"},
+            {"id"  : 1, "text" : "Window frames"},
+            {"id"  : 2, "text" : "Basement"}
+        ],
+        "questionTip": "I hope it's not the toilet...",
+        "feedbackAns": "Window frames",
+        "feedbackCopy": "Check the window frames for air leaks, this place may not be too obvious but it is one of the most common places for air to leak.",
+        "ansTip" : "I never thought to check there!",
+        "correct"  : 1
+    },
+    {
+        "question" : "How many common places are there for air leaks in your home?",
+        "class": "air",
+        "answers"  : [
+            {"id"  : 0, "text" : "11"},
+            {"id"  : 1, "text" : "10"},
+            {"id"  : 2, "text" : "25"}
+        ],
+        "questionTip": "It's an odd number!",
+        "feedbackAns": "Window frames",
+        "feedbackCopy": "Look for air leaks in your home, they can cost you a lot of money. Many people will tell you to insulate your homes, but if you don’t look for leaks first, the insulation won’t be effective!",
+        "ansTip" : "Check them all!",
+        "feedbackImg": "assets/images/questions/air-usage-1.svg",
+        "correct"  : 0
+    },
+    {
+        "question" : "When looking at purchasing a cieling fan for your home - what label should you look for?",
+        "class": "air",
+        "answers"  : [
+            {"id"  : 0, "text" : "Coolest label"},
+            {"id"  : 1, "text" : "Energy Star"},
+            {"id"  : 2, "text" : "Pokemon"}
+        ],
+        "questionTip": "Gotta catch em all?",
+        "feedbackAns": "Energy Star label",
+        "feedbackCopy": "This label means the fan will move air 20% more efficiently than standard models!",
+        "ansTip" : "I think I have that label somewhere...",
+        "correct"  : 1
+    }
+]
